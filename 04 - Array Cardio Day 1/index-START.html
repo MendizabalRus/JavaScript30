@@ -68,10 +68,17 @@
       return sorted;
     });
 
-    console.log(sortedInventors);
+    //console.log(sortedInventors);
 
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live all together?
+
+    const summedLifetimeInventors = inventors.reduce((acc, inventor) => {
+      summedLifetime = acc + (inventor.passed - inventor.year);
+      return summedLifetime;
+    }, 0);
+    
+    console.log(summedLifetimeInventors);
 
     // 5. Sort the inventors by years lived
 
