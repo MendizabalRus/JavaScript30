@@ -112,11 +112,24 @@
       return nameA > nameB ? 1 : -1;
     });
 
-    console.log(peopleSorted);
+    //console.log(peopleSorted);
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+
+    const reducedData = data.reduce((acc, instance) => {
+      if (!acc[instance]) {
+        acc[instance] = 1;
+      }
+      else {
+        acc[instance] += 1;
+      }
+     
+      return acc;
+      }, {}); 
+
+    console.log(reducedData);
 
   </script>
 
